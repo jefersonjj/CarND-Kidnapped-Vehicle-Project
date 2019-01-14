@@ -39,7 +39,15 @@ vector<float> initialize_priors(int map_size, vector<float> landmark_positions,
   vector<float> priors(map_size, 0.0);
     
   // TODO: YOUR CODE HERE
-
+  // set each landmark positon +/-1 to 1.0/9.0 (9 possible postions)
+  float norm_term = landmark_positions.size() * (position_stdev * 2 + 1);
+  for (int i=0; i < landmark_positions.size(); ++i) {
+    for (float j=1; j <= position_stdev; ++j) {
+      priors.at(int(j+landmark_positions[i]+map_size)%map_size) += 1.0/norm_term;
+      priors.at(int(-j+landmark_positions[i]+map_size)%map_size) += 1.0/norm_term;
+    }
+    priors.at(landmark_positions[i]) += 1.0/norm_term;
+  }
 
   return priors;
 }
