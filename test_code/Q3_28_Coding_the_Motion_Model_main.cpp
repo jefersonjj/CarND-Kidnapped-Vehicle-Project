@@ -54,8 +54,19 @@ float motion_model(float pseudo_position, float movement, vector<float> priors,
   float position_prob = 0.0f;
   
   // YOUR CODE HERE
+  // loop over state space for all possible positions x (convolution):
+  for (float j=0; j< map_size; ++j) {
+    float next_pseudo_position = j;
+    // distance from i to j
+    float distance_ij = pseudo_position-next_pseudo_position;
 
-  
+    // transition probabilities:
+    float transition_prob = Helpers::normpdf(distance_ij, movement, 
+                                             control_stdev);
+    // estimate probability for the motion model, this is our prior
+    position_prob += transition_prob*priors[j];
+  }
+
   return position_prob;
 }
 
