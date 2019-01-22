@@ -58,11 +58,17 @@ int main() {
   // initialize priors
   vector<float> priors = initialize_priors(map_size, landmark_positions,
                                            position_stdev);
-  // UNCOMMENT TO SEE THIS STEP OF THE FILTER
-  //cout << "-----------PRIORS INIT--------------" << endl;
-  //for (int p = 0; p < priors.size(); ++p){
-  //  cout << priors[p] << endl;
-  //}  
+
+  // Debug option: enable/disable
+  bool debug = false;
+
+  if (debug == true) {
+    // SHOW THIS STEP OF THE FILTER
+    cout << "-----------PRIORS INIT--------------" << endl;
+    for (int p = 0; p < priors.size(); ++p){
+      cout << priors[p] << endl;
+    }
+  }  
     
   /**
    * TODO: initialize posteriors
