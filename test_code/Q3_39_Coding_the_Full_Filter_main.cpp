@@ -83,10 +83,12 @@ int main() {
     
   // cycle through time steps
   for (int t = 0; t < time_steps; ++t) {
-    // UNCOMMENT TO SEE THIS STEP OF THE FILTER
-    //cout << "---------------TIME STEP---------------" << endl;
-    //cout << "t = " << t << endl;
-    //cout << "-----Motion----------OBS----------------PRODUCT--" << endl;
+    if (debug == true) {
+      // SHOW THIS STEP OF THE FILTER
+      cout << "---------------TIME STEP---------------" << endl;
+      cout << "t = " << t << endl;
+      cout << "-----Motion----------OBS----------------PRODUCT--" << endl;
+    }
 
     if (!sensor_obs[t].empty()) {
       observations = sensor_obs[t]; 
@@ -121,37 +123,47 @@ int main() {
        */
       posteriors[i] = motion_prob * observation_prob;
 
-      // UNCOMMENT TO SEE THIS STEP OF THE FILTER
-      //cout << motion_prob << "\t" << observation_prob << "\t" 
-      //     << "\t"  << motion_prob * observation_prob << endl;   
+      if (debug == true) {
+        // SHOW THIS STEP OF THE FILTER
+        cout << motion_prob << "\t" << observation_prob << "\t" 
+             << "\t"  << motion_prob * observation_prob << endl;
+      }   
     } 
         
-    // UNCOMMENT TO SEE THIS STEP OF THE FILTER
-    //cout << "----------RAW---------------" << endl;
-    //for (int p = 0; p < posteriors.size(); ++p) {
-    //  cout << posteriors[p] << endl;
-    //}
+    if (debug == true) {
+      // UNCOMMENT TO SEE THIS STEP OF THE FILTER
+      cout << "----------RAW---------------" << endl;
+      for (int p = 0; p < posteriors.size(); ++p) {
+        cout << posteriors[p] << endl;
+      }
+    }
 
     /**
      * TODO: normalize posteriors (see helpers.h for a helper function)
      */
     posteriors = Helpers::normalize_vector(posteriors);
 
-    // print to stdout
-    //cout << posteriors[t] <<  "\t" << priors[t] << endl;
+    if (debug == true) {
+      // print to stdout
+      cout << posteriors[t] <<  "\t" << priors[t] << endl;
+    }
 
-    // UNCOMMENT TO SEE THIS STEP OF THE FILTER
-    //cout << "----------NORMALIZED---------------" << endl;
+    if (debug == true) {
+      // UNCOMMENT TO SEE THIS STEP OF THE FILTER
+      cout << "----------NORMALIZED---------------" << endl;
+    }
 
     /**
      * TODO: update priors
      */
     priors = posteriors;
 
-    // UNCOMMENT TO SEE THIS STEP OF THE FILTER
-    //for (int p = 0; p < posteriors.size(); ++p) {
-    //  cout << posteriors[p] << endl;
-    //}
+    if (debug == true) {
+      // UNCOMMENT TO SEE THIS STEP OF THE FILTER
+      for (int p = 0; p < posteriors.size(); ++p) {
+        cout << posteriors[p] << endl;
+      }
+    }
 
     // print posteriors vectors to stdout
     for (int p = 0; p < posteriors.size(); ++p) {
