@@ -21,6 +21,8 @@
 const double M_PI = 3.14159265358979323846;
 #endif
 
+const bool debug false;
+
 /**
  * Struct representing one position/control measurement.
  */
