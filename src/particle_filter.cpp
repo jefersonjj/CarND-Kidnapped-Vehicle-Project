@@ -21,6 +21,8 @@
 using std::string;
 using std::vector;
 using std::normal_distribution;
+using std::cout;
+using std::endl;
 
 void ParticleFilter::init(double x, double y, double theta, double std[]) {
   /**
@@ -49,6 +51,14 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
     p.y = dist_y(gen);
     p.theta = dist_theta(gen);
     p.weight = 1.0;
+
+    // Show initialized data of the first five particles
+    if (debug == true) {
+      if (p.id < 5) {
+        cout << "Particle #" << p.id + 1 << endl;      
+        cout << "p.x = " << p.x << ", p.y = " << p.y << ", p.theta = " << p.theta << endl;
+      }
+    }
 
     // Add the created particle to the vector
     particles.push_back(p);
