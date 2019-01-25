@@ -100,6 +100,14 @@ void ParticleFilter::prediction(double delta_t, double std_pos[],
     particles[i].x += dist_x(gen);
     particles[i].y += dist_y(gen);
     particles[i].theta += dist_theta(gen);
+
+    // Show predicted data of the first five particles
+    if (debug == true) {
+      if (i < 5) {
+        cout << "Particle #" << i + 1 << endl;      
+        cout << "particles[i].x = " << particles[i].x << ", particles[i].y = " << particles[i].y << ", particles[i].theta = " << particles[i].theta << endl;
+      }
+    }    
   }
 }
 
