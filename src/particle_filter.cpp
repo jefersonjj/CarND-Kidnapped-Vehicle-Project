@@ -23,6 +23,7 @@ using std::vector;
 using std::normal_distribution;
 using std::cout;
 using std::endl;
+using std::numeric_limits;
 
 void ParticleFilter::init(double x, double y, double theta, double std[]) {
   /**
@@ -121,7 +122,30 @@ void ParticleFilter::dataAssociation(vector<LandmarkObs> predicted,
    *   probably find it useful to implement this method and use it as a helper 
    *   during the updateWeights phase.
    */
+  // Loop for all observed measurements
+  for (int i = 0; i < observations.size(); i++) {        
+        // Initialize the minimum distance
+        double min_dist = numeric_limits<double>::max();
 
+        // Initialize the id of predicted measurement (to be associated with the observation)
+        int associated_id = -1;   
+
+        // Get current observation
+        LandmarkObs obs = observations[i];  
+
+        // Loop for all predicted measurements
+        for (int j = 0; j < predicted.size(); j++) {
+            LandmarkObs predict = predicted[j];
+            double current_dist = dist(obs.x, obs.y, predict.x, predict.y);
+            if (current_dist < min_dist) {
+                min_dist = current_dist;
+                associated_id = predict.id;
+            }
+        }
+
+        // Select the id of nearest predicted measurements
+        observations[i].id = associated_id;
+    }   
 }
 
 void ParticleFilter::updateWeights(double sensor_range, double std_landmark[], 
