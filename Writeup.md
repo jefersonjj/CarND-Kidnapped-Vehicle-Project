@@ -25,6 +25,6 @@ Here is my working repository for this project:
 
 https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project
 
-It is imported from below original repository:
+It is imported and frequently updated (cherry-pick or merge) from below original repository:
 
 https://github.com/udacity/CarND-Kidnapped-Vehicle-Project
