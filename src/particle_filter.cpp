@@ -143,6 +143,17 @@ void ParticleFilter::dataAssociation(vector<LandmarkObs> predicted,
             }
         }
 
+        // Show some information of the first five observations
+        if (debug == true) {
+          if (i < 5) {
+            cout << "Observation #" << i + 1 << endl;
+            cout << "obs.x = " << obs.x << ", obs.y = " << obs.y << endl;
+            cout << "min_dist = " << min_dist << endl;      
+            cout << "associated_id = " << associated_id << endl;
+            cout << "predicted[id].x = " << predicted[associated_id].x << ", predicted[id].y = " << predicted[associated_id].y << endl;
+          }
+        }        
+
         // Select the id of nearest predicted measurements
         observations[i].id = associated_id;
     }   
