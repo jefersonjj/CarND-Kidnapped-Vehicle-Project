@@ -123,7 +123,7 @@ void ParticleFilter::dataAssociation(vector<LandmarkObs> predicted,
    *   during the updateWeights phase.
    */
   // Loop for all observed measurements
-  for (int i = 0; i < observations.size(); i++) {        
+  for (unsigned int i = 0; i < observations.size(); i++) {
         // Initialize the minimum distance
         double min_dist = numeric_limits<double>::max();
 
@@ -134,7 +134,7 @@ void ParticleFilter::dataAssociation(vector<LandmarkObs> predicted,
         LandmarkObs obs = observations[i];  
 
         // Loop for all predicted measurements
-        for (int j = 0; j < predicted.size(); j++) {
+        for (unsigned int j = 0; j < predicted.size(); j++) {
             LandmarkObs predict = predicted[j];
             double current_dist = dist(obs.x, obs.y, predict.x, predict.y);
             if (current_dist < min_dist) {
@@ -187,7 +187,7 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
     vector<LandmarkObs> predicted;
         
     // Loop for each landmark on the map
-    for (int j = 0; j < map_landmarks.landmark_list.size(); j++) {
+    for (unsigned int j = 0; j < map_landmarks.landmark_list.size(); j++) {
       // Get id and coordinates
       int landmark_id = map_landmarks.landmark_list[j].id_i;
       float landmark_x = map_landmarks.landmark_list[j].x_f;
@@ -201,7 +201,7 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
     
     // Transform the observations: vehicle coordinates --> map coordinates
     vector<LandmarkObs> transformed_obs;    
-    for (int j = 0; j < observations.size(); j++) {
+    for (unsigned int j = 0; j < observations.size(); j++) {
       double transformed_x = cos(p_theta) * observations[j].x - sin(p_theta) * observations[j].y + p_x;
       double transformed_y = sin(p_theta) * observations[j].x + cos(p_theta) * observations[j].y + p_y;
       transformed_obs.push_back(LandmarkObs{observations[j].id, transformed_x, transformed_y});
@@ -214,14 +214,14 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
     particles[i].weight = 1.0;
         
     // Loop for each transformed observation
-    for (int j = 0; j < transformed_obs.size(); j++) {      
+    for (unsigned int j = 0; j < transformed_obs.size(); j++) {
       // Get cordinates of the observation
       double obs_x = transformed_obs[j].x;
       double obs_y = transformed_obs[j].y;
             
       // Get coordinates of the predicted measurement (associated with the observation)
       double predicted_x, predicted_y;
-      for (int k = 0; k < predicted.size(); k++) {
+      for (unsigned int k = 0; k < predicted.size(); k++) {
         if (predicted[k].id == transformed_obs[j].id) {
           predicted_x = predicted[k].x;
           predicted_y = predicted[k].y;
