@@ -10,6 +10,7 @@ This is my writeup for the project "Kidnapped Vehicle" of Self Driving Car Nanad
 
 * [About Kidnapped Vehicle Project](#About-Kidnapped-Vehicle-Project)
 * [Project code](#Project-code)
+* [Output video](#Output-video)
 * [Some notes](#Some-notes)
 
 ---
@@ -30,6 +31,16 @@ It is imported and frequently updated (cherry-pick or merge) from below original
 
 https://github.com/udacity/CarND-Kidnapped-Vehicle-Project
 
+---
+## Output video
+
+Here are the links to the output videos which were uploaded on Github and Youtube (for easy reference). Click on the thumbnail image to jump to the video on Youtube.
+
+| Link on Youtube              | Link on Github               |
+|:----------------------------:|:----------------------------:|
+|[![ProjectVideo](https://i.ytimg.com/vi/2Qa63TRbtpw/hqdefault.jpg)](http://www.youtube.com/watch?v=2Qa63TRbtpw)|[/output/KidnappedVehicle.mp4](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/output/KidnappedVehicle.mp4)|
+
+---
 ## Some notes
 
 * Debug option
