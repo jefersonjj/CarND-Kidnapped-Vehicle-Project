@@ -278,6 +278,13 @@ void ParticleFilter::resample() {
       index = (index + 1) % num_particles;
     }
     new_particles.push_back(particles[index]);
+
+    // Show the index of some new samples
+    if (debug == true) {
+      if (i < 5) {
+        cout << "Index of #" << i + 1 << " sample = " << index <<endl;
+      }
+    }
   }
   
   // Replace the particles with newly sampled ones
