@@ -234,6 +234,14 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
       // Multiply the calculated weight  
       particles[i].weight *= obs_weight;
     }
+
+    // Show updated weight of the first five particles
+    if (debug == true) {
+      if (i < 5) {
+        cout << "Particle #" << i + 1 << endl;
+        cout << "Updated weight = " << particles[i].weight << endl;
+      }
+    }
   }
 }
 
