@@ -126,39 +126,39 @@ void ParticleFilter::dataAssociation(vector<LandmarkObs> predicted,
    */
   // Loop for all observed measurements
   for (unsigned int i = 0; i < observations.size(); i++) {
-        // Initialize the minimum distance
-        double min_dist = numeric_limits<double>::max();
+    // Initialize the minimum distance
+    double min_dist = numeric_limits<double>::max();
 
-        // Initialize the id of predicted measurement (to be associated with the observation)
-        int associated_id = -1;   
+    // Initialize the id of predicted measurement (to be associated with the observation)
+    int associated_id = -1;
 
-        // Get current observation
-        LandmarkObs obs = observations[i];  
+    // Get current observation
+    LandmarkObs obs = observations[i];
 
-        // Loop for all predicted measurements
-        for (unsigned int j = 0; j < predicted.size(); j++) {
-            LandmarkObs predict = predicted[j];
-            double current_dist = dist(obs.x, obs.y, predict.x, predict.y);
-            if (current_dist < min_dist) {
-                min_dist = current_dist;
-                associated_id = predict.id;
-            }
-        }
+    // Loop for all predicted measurements
+    for (unsigned int j = 0; j < predicted.size(); j++) {
+      LandmarkObs predict = predicted[j];
+      double current_dist = dist(obs.x, obs.y, predict.x, predict.y);
+      if (current_dist < min_dist) {
+        min_dist = current_dist;
+        associated_id = predict.id;
+      }
+    }
 
-        // Show some information of the first five observations
-        if (debug == true) {
-          if (i < 5) {
-            cout << "Observation #" << i + 1 << endl;
-            cout << "obs.x = " << obs.x << ", obs.y = " << obs.y << endl;
-            cout << "min_dist = " << min_dist << endl;      
-            cout << "associated_id = " << associated_id << endl;
-            cout << "predicted[id].x = " << predicted[associated_id].x << ", predicted[id].y = " << predicted[associated_id].y << endl;
-          }
-        }        
+    // Show some information of the first five observations
+    if (debug == true) {
+      if (i < 5) {
+        cout << "Observation #" << i + 1 << endl;
+        cout << "obs.x = " << obs.x << ", obs.y = " << obs.y << endl;
+        cout << "min_dist = " << min_dist << endl;
+        cout << "associated_id = " << associated_id << endl;
+        cout << "predicted[id].x = " << predicted[associated_id].x << ", predicted[id].y = " << predicted[associated_id].y << endl;
+      }
+    }
 
-        // Select the id of nearest predicted measurements
-        observations[i].id = associated_id;
-    }   
+    // Select the id of nearest predicted measurements
+    observations[i].id = associated_id;
+  }
 }
 
 void ParticleFilter::updateWeights(double sensor_range, double std_landmark[], 
