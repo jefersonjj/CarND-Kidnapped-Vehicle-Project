@@ -21,6 +21,8 @@
 using std::string;
 using std::vector;
 using std::normal_distribution;
+using std::uniform_int_distribution;
+using std::uniform_real_distribution;
 using std::cout;
 using std::endl;
 using std::numeric_limits;
@@ -252,7 +254,34 @@ void ParticleFilter::resample() {
    * NOTE: You may find std::discrete_distribution helpful here.
    *   http://en.cppreference.com/w/cpp/numeric/random/discrete_distribution
    */
+  std::default_random_engine gen;
 
+  // Create a vector for particle weights
+  vector<double> weights;
+  for (int i = 0; i < num_particles; i++) {
+    weights.push_back(particles[i].weight);
+  }
+
+  // Initial setting
+  vector<Particle> new_particles;
+  double beta = 0.0;
+  uniform_int_distribution<int> uniintdist(0, num_particles-1);
+  int index = uniintdist(gen);
+  double mw = *max_element(weights.begin(), weights.end());
+  uniform_real_distribution<double> unirealdist(0.0, 2.0 * mw);
+
+  // Algorithm to sample the new particles
+  for (int i = 0; i < num_particles; i++) {
+    beta += unirealdist(gen);
+    while (beta > weights[index]) {
+      beta -= weights[index];
+      index = (index + 1) % num_particles;
+    }
+    new_particles.push_back(particles[index]);
+  }
+  
+  // Replace the particles with newly sampled ones
+  particles = new_particles;
 }
 
 void ParticleFilter::SetAssociations(Particle& particle, 
