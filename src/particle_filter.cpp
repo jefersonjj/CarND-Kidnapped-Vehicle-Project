@@ -211,6 +211,17 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
         
     // Call function to associate the transformed observation with predicted landmarks
     dataAssociation(predicted, transformed_obs);
+
+    // For visualization (blue lines on simulator)
+    std::vector<int> associations;
+    std::vector<double> sense_x;
+    std::vector<double> sense_y;
+    for (unsigned int j = 0; j < transformed_obs.size(); j++) {
+      associations.push_back(transformed_obs[j].id);
+      sense_x.push_back(transformed_obs[j].x);
+      sense_y.push_back(transformed_obs[j].y);
+    }
+    SetAssociations(particles[i], associations, sense_x, sense_y);
         
     // Initialize the weight
     particles[i].weight = 1.0;
