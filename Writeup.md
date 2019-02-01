@@ -45,8 +45,10 @@ Here are the links to the output videos which were uploaded on Github and Youtub
 
 * Debug option
 
- Change below setting to "true" in [helper_functions.h](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/src/helper_functions.h) to show debug messages with detail information.
+ Add definition DEBUG in [helper_functions.h](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/src/helper_functions.h) as below before compiling the sources to show debug messages with detail information.
 
  ```C++
- const bool debug = false;
+ // Flag to enable debug messages with detail information
+ // Comment out to disable
+ #define DEBUG
  ```
