@@ -56,12 +56,12 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
     p.weight = 1.0;
 
     // Show initialized data of the first five particles
-    if (debug == true) {
-      if (p.id < 5) {
-        cout << "Particle #" << p.id + 1 << endl;      
-        cout << "p.x = " << p.x << ", p.y = " << p.y << ", p.theta = " << p.theta << endl;
-      }
+    #ifdef DEBUG
+    if (p.id < 5) {
+      cout << "Particle #" << p.id + 1 << endl;      
+      cout << "p.x = " << p.x << ", p.y = " << p.y << ", p.theta = " << p.theta << endl;
     }
+    #endif
 
     // Add the created particle to the vector
     particles.push_back(p);
@@ -105,12 +105,12 @@ void ParticleFilter::prediction(double delta_t, double std_pos[],
     particles[i].theta += dist_theta(gen);
 
     // Show predicted data of the first five particles
-    if (debug == true) {
-      if (i < 5) {
-        cout << "Particle #" << i + 1 << endl;      
-        cout << "particles[i].x = " << particles[i].x << ", particles[i].y = " << particles[i].y << ", particles[i].theta = " << particles[i].theta << endl;
-      }
-    }    
+    #ifdef DEBUG
+    if (i < 5) {
+      cout << "Particle #" << i + 1 << endl;      
+      cout << "particles[i].x = " << particles[i].x << ", particles[i].y = " << particles[i].y << ", particles[i].theta = " << particles[i].theta << endl;
+    }
+    #endif    
   }
 }
 
@@ -146,15 +146,15 @@ void ParticleFilter::dataAssociation(vector<LandmarkObs> predicted,
     }
 
     // Show some information of the first five observations
-    if (debug == true) {
-      if (i < 5) {
-        cout << "Observation #" << i + 1 << endl;
-        cout << "obs.x = " << obs.x << ", obs.y = " << obs.y << endl;
-        cout << "min_dist = " << min_dist << endl;
-        cout << "associated_id = " << associated_id << endl;
-        cout << "predicted[id].x = " << predicted[associated_id].x << ", predicted[id].y = " << predicted[associated_id].y << endl;
-      }
+    #ifdef DEBUG
+    if (i < 5) {
+      cout << "Observation #" << i + 1 << endl;
+      cout << "obs.x = " << obs.x << ", obs.y = " << obs.y << endl;
+      cout << "min_dist = " << min_dist << endl;
+      cout << "associated_id = " << associated_id << endl;
+      cout << "predicted[id].x = " << predicted[associated_id].x << ", predicted[id].y = " << predicted[associated_id].y << endl;
     }
+    #endif
 
     // Select the id of nearest predicted measurements
     observations[i].id = associated_id;
@@ -249,12 +249,12 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
     }
 
     // Show updated weight of the first five particles
-    if (debug == true) {
-      if (i < 5) {
-        cout << "Particle #" << i + 1 << endl;
-        cout << "Updated weight = " << particles[i].weight << endl;
-      }
+    #ifdef DEBUG
+    if (i < 5) {
+      cout << "Particle #" << i + 1 << endl;
+      cout << "Updated weight = " << particles[i].weight << endl;
     }
+    #endif
   }
 }
 
@@ -291,11 +291,11 @@ void ParticleFilter::resample() {
     new_particles.push_back(particles[index]);
 
     // Show the index of some new samples
-    if (debug == true) {
-      if (i < 5) {
-        cout << "Index of #" << i + 1 << " sample = " << index <<endl;
-      }
+    #ifdef DEBUG
+    if (i < 5) {
+      cout << "Index of #" << i + 1 << " sample = " << index <<endl;
     }
+    #endif
   }
   
   // Replace the particles with newly sampled ones

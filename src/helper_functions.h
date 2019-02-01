@@ -21,8 +21,9 @@
 const double M_PI = 3.14159265358979323846;
 #endif
 
-// For output debug messages with detail information (true/false)
-const bool debug = false;
+// Flag to enable debug messages with detail information
+// Comment out to disable
+//#define DEBUG
 
 /**
  * Struct representing one position/control measurement.
