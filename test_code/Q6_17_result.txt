@@ -1,0 +1,8 @@
+$ ./runtest.sh Q6_17_Landmarks_Observation1.cpp
+6, 3
+
+$ ./runtest.sh Q6_17_Landmarks_Observation2.cpp
+2, 2
+
+$ ./runtest.sh Q6_17_Landmarks_Observation3.cpp
+0, 5
