@@ -1,0 +1,5 @@
+$ ./runtest.sh Q6_20_Particle_Weights_main.cpp multiv_gauss.cpp
+Weight1: 0.00683645
+Weight2: 0.00683645
+Weight3: 9.83185e-49
+Final weight: 4.59511e-53
