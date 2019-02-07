@@ -1,0 +1,2 @@
+$ ./runtest.sh Q3_34_Observation_Model_Probability_main.cpp
+0.352065
