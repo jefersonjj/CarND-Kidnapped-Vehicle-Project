@@ -58,7 +58,11 @@ int main() {
   // initialize priors
   vector<float> priors = initialize_priors(map_size, landmark_positions,
                                            position_stdev);
-  
+
+  // Definition flag to enable debug messages with detail information
+  // Enable this flag by specifying here or by compiling with -DDEBUG
+  //#define DEBUG
+
   #ifdef DEBUG
   // SHOW THIS STEP OF THE FILTER
   cout << "-----------PRIORS INIT--------------" << endl;
