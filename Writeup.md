@@ -55,3 +55,7 @@ Here are the links to the output videos which were uploaded on Github and Youtub
  ```txt
  add_definitions(-DDEBUG)
  ```
+
+* Test code
+
+Folder[/test_code/](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/tree/master/test_code) includes the code (Jupyter notebook, C++) for the quiz on lesson 2 - 6. 
