@@ -43,7 +43,7 @@ Here are the links to the output videos which were uploaded on Github and Youtub
 ---
 ## Some notes
 
-* Debug option
+### Debug option
 
  Add definition DEBUG in [helper_functions.h](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/src/helper_functions.h) as below before compiling the sources to show debug messages with detail information.
  ```C++
@@ -56,6 +56,6 @@ Here are the links to the output videos which were uploaded on Github and Youtub
  add_definitions(-DDEBUG)
  ```
 
-* Test code
+### Test code
 
 Folder[/test_code/](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/tree/master/test_code) includes the code (Jupyter notebook, C++) for the quiz on lesson 2 - 6. Refer to the description on [runtest.sh](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/test_code/runtest.sh) about how to compile and run the C++ code.
