@@ -58,4 +58,4 @@ Here are the links to the output videos which were uploaded on Github and Youtub
 
 ### Test code
 
-Folder[/test_code/](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/tree/master/test_code) includes the code (Jupyter notebook, C++) for the quiz on lesson 2 - 6. Refer to the description on [runtest.sh](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/test_code/runtest.sh) about how to compile and run the C++ code.
+Folder [/test_code/](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/tree/master/test_code) includes the code (Jupyter notebook, C++) for the quiz on lesson 2 ~ 6. Refer to the description on [runtest.sh](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/test_code/runtest.sh) about how to compile and run the C++ code.
