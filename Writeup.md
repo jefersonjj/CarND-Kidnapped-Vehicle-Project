@@ -19,6 +19,7 @@ This is my writeup for the project "Kidnapped Vehicle" of Self Driving Car Nanad
 The goals / steps of this project are the following:
 
 * Implement a 2 dimensional particle filter in C++ given a map, some initial localization information and observation/control data at each time step.
+* More detail explanation can be found in [README](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/README.md)
 
 ---
 ## Project code
