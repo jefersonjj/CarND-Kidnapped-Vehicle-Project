@@ -44,7 +44,7 @@ Here are the links to the output videos which were uploaded on Github and Youtub
 
 | Link on Youtube              | Link on Github               |
 |:----------------------------:|:----------------------------:|
-|[![ProjectVideo](https://i.ytimg.com/vi/2Qa63TRbtpw/hqdefault.jpg)](http://www.youtube.com/watch?v=2Qa63TRbtpw)|[/output/KidnappedVehicle.mp4](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/output/KidnappedVehicle.mp4)|
+|[![ProjectVideo](https://i.ytimg.com/vi/2Qa63TRbtpw/hqdefault.jpg)](http://www.youtube.com/watch?v=2Qa63TRbtpw)|[![alt text][image1]](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/output/KidnappedVehicle.mp4)|
 
 ---
 ## Some notes
