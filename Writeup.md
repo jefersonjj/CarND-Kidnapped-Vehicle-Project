@@ -7,6 +7,7 @@ This is my writeup for the project "Kidnapped Vehicle" of Self Driving Car Nanad
 [//]: # (Image References)
 
 [image1]: ./output/KidnappedVehicle.gif "Kidnapped Vehicle (Animation)"
+[image2]: https://i.ytimg.com/vi/2Qa63TRbtpw/hqdefault.jpg "Thumbnail on Youtube"
 
 ---
 
@@ -43,7 +44,7 @@ Here are the links to the output videos which were uploaded on Github and Youtub
 
 | Link on Youtube              | Link on Github               |
 |:----------------------------:|:----------------------------:|
-|[![ProjectVideo](https://i.ytimg.com/vi/2Qa63TRbtpw/hqdefault.jpg)](http://www.youtube.com/watch?v=2Qa63TRbtpw)|[![alt text][image1]](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/output/KidnappedVehicle.mp4)|
+|[![alt text][image2]](http://www.youtube.com/watch?v=2Qa63TRbtpw)|[![alt text][image1]](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/output/KidnappedVehicle.mp4)|
 
 ---
 ## Some notes
