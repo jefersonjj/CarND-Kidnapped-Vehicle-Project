@@ -39,7 +39,7 @@ https://github.com/udacity/CarND-Kidnapped-Vehicle-Project
 ---
 ## Output video
 
-Here are the links to the output videos which were uploaded on Github and Youtube (for easy reference). Click on the thumbnail image to jump to the video on Youtube.
+Here are the links to the output videos which were uploaded on Github and Youtube (for easy reference). Click on the thumbnail image to jump to the video on Github/Youtube.
 
 | Link on Youtube              | Link on Github               |
 |:----------------------------:|:----------------------------:|
