@@ -4,7 +4,6 @@
 
 This is my writeup for the project "Kidnapped Vehicle" of Self Driving Car Nanadegree on Udacity.
 
----
 [//]: # (Image References)
 
 [image1]: ./output/KidnappedVehicle.gif "Kidnapped Vehicle (Animation)"
