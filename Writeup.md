@@ -64,6 +64,12 @@ Here are the links to the output videos which were uploaded on Github and Youtub
  add_definitions(-DDEBUG)
  ```
 
+ After adding DEBUG option in [CMakeLists.txt](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/CMakeLists.txt) (by [following commit](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/commit/fff9b471c156a4fda7033c7fcfba1d74a920434c)), debug option can be enabled by simply specifying -DDEBUG=ON when running cmake as below: 
+ ```shell
+ $ cmake -DDEBUG=ON ..
+ $ make
+ ```
+
 ### Test code
 
 Folder [/test_code/](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/tree/master/test_code) includes the code (Jupyter notebook, C++) for the quiz on lesson 2 ~ 6. Refer to the description on [runtest.sh](https://github.com/pl80tech/CarND-Kidnapped-Vehicle-Project/blob/master/test_code/runtest.sh) about how to compile and run the C++ code.
