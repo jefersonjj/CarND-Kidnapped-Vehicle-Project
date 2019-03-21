@@ -4,6 +4,14 @@ cmake_minimum_required (VERSION 3.5)
 
 add_definitions(-std=c++11)
 
+# Add debug option
+option(DEBUG "Enable Debug Log" OFF)
+
+# Set the compile definition
+if(DEBUG)
+  add_definitions(-DDEBUG)
+endif()
+
 set(CXX_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS "${CXX_FLAGS}")
 
